@@ -7,10 +7,10 @@ metadata:
 spec:
   ports:
     - name: master
-      port: {{ .Values.container.ports.httpport }} 
-      targetPort: {{ .Values.container.ports.httpport }} 
+      port: {{ .Values.container.ports.porthttp }} 
+      targetPort: {{ .Values.container.ports.targethttp }} 
     - name: slave
-      port: {{ .Values.container.ports.jnlpport }} 
-      targetPort: {{ .Values.container.ports.jnlpport }} 
+      port: {{ .Values.container.ports.portjnlp }} 
+      targetPort: {{ .Values.container.ports.targetjnlp }} 
   selector:
     app: {{ .Values.name }}
