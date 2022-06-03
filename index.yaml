@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  jenkins-helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-03T20:33:24.052534021+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 0e6ed5ca20031401745ca752343bef57f7a28d645709c5f75bae86b3169f6a13
+    name: jenkins-helm
+    type: application
+    urls:
+    - https://igor-golubovich.github.io/jenkins_helm/jenkins-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-06-03T20:33:24.050174013+03:00"
