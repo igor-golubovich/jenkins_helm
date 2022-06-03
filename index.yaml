@@ -3,7 +3,17 @@ entries:
   jenkins-helm:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T00:57:07.71764223+03:00"
+    created: "2022-06-04T01:03:54.076002898+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 986ed40b740381fa7b0c949cc8b0b31a5485dd69f07b4e1ecfb1725482f96e02
+    name: jenkins-helm
+    type: application
+    urls:
+    - https://igor-golubovich.github.io/jenkins_helm/jenkins-helm-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-04T01:03:54.075702141+03:00"
     description: A Helm chart for Kubernetes
     digest: a109c67aaca237c32d00c718f0c303d94527f824a94e857921fb6eb21eaf48ce
     name: jenkins-helm
@@ -13,7 +23,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T00:57:07.717346128+03:00"
+    created: "2022-06-04T01:03:54.066429972+03:00"
     description: A Helm chart for Kubernetes
     digest: 19fc202c8fb7e09479696e8fa5b5093e0302877352ca009536023cac148d0336
     name: jenkins-helm
@@ -23,7 +33,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T00:57:07.716994362+03:00"
+    created: "2022-06-04T01:03:54.066081104+03:00"
     description: A Helm chart for Kubernetes
     digest: 3347ae7cdca55b7871f74a9f695d6ded23667924d0993efcdee7076d822cc344
     name: jenkins-helm
@@ -33,7 +43,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T00:57:07.716672871+03:00"
+    created: "2022-06-04T01:03:54.065709283+03:00"
     description: A Helm chart for Kubernetes
     digest: ae54b9582ef408049302a69708a30b93c3c11eaacb84b7665821724bd819bd38
     name: jenkins-helm
@@ -43,7 +53,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T00:57:07.71637319+03:00"
+    created: "2022-06-04T01:03:54.065384204+03:00"
     description: A Helm chart for Kubernetes
     digest: 0e6ed5ca20031401745ca752343bef57f7a28d645709c5f75bae86b3169f6a13
     name: jenkins-helm
@@ -51,4 +61,4 @@ entries:
     urls:
     - https://igor-golubovich.github.io/jenkins_helm/jenkins-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-04T00:57:07.71583851+03:00"
+generated: "2022-06-04T01:03:54.0648362+03:00"
