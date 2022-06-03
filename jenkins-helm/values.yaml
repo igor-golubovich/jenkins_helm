@@ -4,14 +4,14 @@ image: jfrog.it-academy.by/public/jenkins-ci:igolubovich
 mail: igor.golubovich.1991@gmail.com
 
 
-spec:
-  ports:
-   master:
-      port: 8080
-      targetPort: 8080
-   slave:
-      port: 50000 
-      targetPort: 50000 
+
+service:
+ master:
+    port: 8080
+    targetPort: 8080
+ slave:
+    port: 50000 
+    targetPort: 50000 
 
 
 resources: 
