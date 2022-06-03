@@ -4,9 +4,10 @@ image: jfrog.it-academy.by/public/jenkins-ci:igolubovich
 mail: igor.golubovich.1991@gmail.com
 
 
-container-ports:
- http-port: 8080
- jnlp-port: 50000
+container:
+ ports:
+  http-port: 8080
+  jnlp-port: 50000
 
 resources: 
  requests:
@@ -23,6 +24,6 @@ nfs:
 ingress:
  class: nginx
  host: jenkins-helm.k8s-17.sa
- host-alias: jenkins-helm.k8s-18.sa
+ alias: jenkins-helm.k8s-18.sa
  port: 8080
   

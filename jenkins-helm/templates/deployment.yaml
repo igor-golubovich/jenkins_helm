@@ -30,9 +30,9 @@ spec:
               value: /var/jenkins_home/casc_configs/jenkins.yaml
           ports:
             - name: http-port
-              containerPort: {{ .Values.container-ports.http-port }} 
+              containerPort: {{ .Values.container.ports.httpport }} 
             - name: jnlp-port
-              containerPort: {{ .Values.container-ports.jnlp-port }} 
+              containerPort: {{ .Values.container.ports.jnlpport }} 
           securityContext:
             runAsUser: 0
           resources:
