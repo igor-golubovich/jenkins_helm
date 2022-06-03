@@ -43,22 +43,22 @@ spec:
               cpu: {{ .Values.resources.limits.cpu }}
               memory: {{ .Values.resources.limits.memory }}
           volumeMounts:
-            - name: {{ .Values.name }}-auth-config
+            - name: jenkins-auth-config
               mountPath: /var/jenkins_home/init.groovy.d/basic-security.groovy
               subPath: basic-security.groovy
-            - name: {{ .Values.name }}-config-yaml
+            - name: jenkins-config-yaml
               mountPath: /var/jenkins_home/casc_configs/jenkins.yaml
               subPath: jenkins.yaml
-            - name: {{ .Values.name }}-config
+            - name: jenkins-config
               mountPath: /var/jenkins_home
       volumes:
-        - name: {{ .Values.name }}-auth-config
+        - name: jenkins-auth-config
           configMap:
             name: basic-security
-        - name: {{ .Values.name }}-config-yaml
+        - name: jenkins-config-yaml
           configMap:
             name: jenkins-config
-        - name: {{ .Values.name }}-config
+        - name: jenkins-config
           nfs:
             server: {{ .Values.nfs.server }}
             path: {{ .Values.nfs.path }}
