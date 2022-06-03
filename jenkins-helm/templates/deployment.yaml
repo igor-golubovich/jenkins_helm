@@ -1,61 +1,120 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "jenkins-helm.fullname" . }}
-  labels:
-    {{- include "jenkins-helm.labels" . | nindent 4 }}
+  name: {{ .Values.name }} 
+  namespace: {{ .Values.namespace }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  replicas: 1
   selector:
     matchLabels:
-      {{- include "jenkins-helm.selectorLabels" . | nindent 6 }}
+      app: {{ .Values.name }} 
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
-        {{- include "jenkins-helm.selectorLabels" . | nindent 8 }}
+        app: {{ .Values.name }} 
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "jenkins-helm.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: {{ .Values.name }} 
+          image: {{ .Values.image }} 
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: JAVA_OPTS
+              value: "-Djenkins.install.runSetupWizard=false"
+            - name: CASC_JENKINS_CONFIG
+              value: /var/jenkins_home/casc_configs/jenkins.yaml
           ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+            - name: http-port
+              containerPort: {{ .Values.container-ports.http-port }} 
+            - name: jnlp-port
+              containerPort: {{ .Values.container-ports.jnlp-port }} 
+          securityContext:
+            runAsUser: 0
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+          volumeMounts:
+            - name: {{ .Values.name }}-auth-config
+              mountPath: /var/jenkins_home/init.groovy.d/basic-security.groovy
+              subPath: basic-security.groovy
+            - name: {{ .Values.name }}-config-yaml
+              mountPath: /var/jenkins_home/casc_configs/jenkins.yaml
+              subPath: jenkins.yaml
+            - name: {{ .Values.name }}-config
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: {{ .Values.name }}-auth-config
+          configMap:
+            name: basic-security
+        - name: {{ .Values.name }}-config-yaml
+          configMap:
+            name: jenkins-config
+        - name: {{ .Values.name }}-config
+          nfs:
+            server: {{ .Values.nfs.server }}
+            path: {{ .Values.nfs.path }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: basic-security
+  namespace: {{ .Values.namespace }}
+data:
+  basic-security.groovy: |
+    #!groovy
+    import jenkins.model.*
+    import hudson.security.*
+    def instance = Jenkins.getInstance()
+    println "--> creating local user 'admin'"
+    def password = System.getenv("PASS")
+    def hudsonRealm = new HudsonPrivateSecurityRealm(false)
+    hudsonRealm.createAccount('admin',"admin")
+    instance.setSecurityRealm(hudsonRealm)
+    def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+    strategy.setAllowAnonymousRead(true)
+    instance.setAuthorizationStrategy(strategy)
+    instance.save()
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-config
+  namespace: {{ .Values.namespace }}
+data:
+  jenkins.yaml: |
+        jenkins:
+          numExecutors: 2
+          clouds:
+          - kubernetes:
+              containerCapStr: "10"
+              maxRequestsPerHostStr: "32"
+              jenkinsUrl: "http://jenkins:8080"
+              name: "kubernetes"
+              namespace: "{{ .Values.namespace }}"
+              skipTlsVerify: true
+        credentials:
+          system:
+            domainCredentials:
+            - credentials:
+              - usernamePassword:
+                  description: "Githubuser"
+                  id: "some_randome"
+                  password: "XXXXXXXXXXX"
+                  scope: GLOBAL
+                  username: "git_hub_user"
+        unclassified:
+          location:
+            adminAddress: "{{ .Values.mail }}"
+            url: "http://{{ .Values.ingress.host }}/"
+          shell:
+            shell: "/bin/bash"
+---
