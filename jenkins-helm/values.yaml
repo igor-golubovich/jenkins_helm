@@ -28,7 +28,7 @@ nfs:
 
 ingress:
  class: nginx
- host: jenkins-helm.k8s-17.sa
- alias: jenkins-helm.k8s-18.sa
+ host: jenkins.k8s-17.sa
+ alias: jenkins.k8s-18.sa
  port: 8080
   
