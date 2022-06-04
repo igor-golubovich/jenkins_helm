@@ -14,11 +14,11 @@ service:
 
 resources: 
  requests:
-   cpu: 1100m
-   memory: 1100Mi
+   cpu: 1000m
+   memory: 1000Mi
  limits:
-   cpu: 2200m
-   memory: 2200Mi
+   cpu: 2400m
+   memory: 2400Mi
 
 nfs:
  server: 192.168.37.105
