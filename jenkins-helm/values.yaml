@@ -1,5 +1,5 @@
 namespace: ci-cd-helm
-# name: jenkins-helm
+name: jenkins-helm
 image: jfrog.it-academy.by/public/jenkins-ci:igolubovich
 mail: igor.golubovich.1991@gmail.com
 

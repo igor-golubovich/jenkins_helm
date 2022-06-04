@@ -7,20 +7,20 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins
+  name: {{ .Values.name }}
   namespace: {{ .Values.namespace }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: jenkins
+        app: {{ .Values.name }}
     spec:
       containers:
-        - name: jenkins
+        - name: {{ .Values.name }}
           image: {{ .Values.image }}
           imagePullPolicy: IfNotPresent
           env:
