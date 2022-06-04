@@ -6,27 +6,26 @@ mail: igor.golubovich.1991@gmail.com
 
 service:
  master:
-    port: 8080
-    targetPort: 8080
+   port: 8080
+   targetPort: 8080
  slave:
-    port: 50000 
-    targetPort: 50000 
+   port: 50000 
+   targetPort: 50000 
 
-# resources: 
-#  requests:
-#    cpu: 1000m
-#    memory: 1000Mi
-#  limits:
-#    cpu: 2300m
-#    memory: 2300Mi
+
+requests:
+  cpu: 1000m
+  memory: 1000Mi
+limits:
+  cpu: 2300m
+  memory: 2300Mi
 
 nfs:
- server: 192.168.37.105
- path: /mnt/IT-Academy/nfs-data/sa2-20-22/Igor_Golubovich/jenkins
+  server: 192.168.37.105
+  path: /mnt/IT-Academy/nfs-data/sa2-20-22/Igor_Golubovich/jenkins
 
 ingress:
- class: nginx
- host: jh.k8s-17.sa
- alias: jh.k8s-18.sa
- port: 8080
-  
+  class: nginx
+  host: jh.k8s-17.sa
+  alias: jh.k8s-18.sa
+  port: 8080
