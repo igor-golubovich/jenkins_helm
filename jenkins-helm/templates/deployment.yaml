@@ -37,11 +37,11 @@ spec:
             runAsUser: 0
           resources:
             requests:
-              cpu: 1000m
-              memory: 1000Mi
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
             limits:
-              cpu: 2300m
-              memory: 2300Mi
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.cpu }}
           volumeMounts:
             - name: jenkins-auth-config
               mountPath: /var/jenkins_home/init.groovy.d/basic-security.groovy
