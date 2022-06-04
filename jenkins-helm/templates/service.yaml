@@ -7,10 +7,10 @@ metadata:
 spec:
   ports:
     - name: master
-      port: 8080
-      targetPort: 8080
+      port: {{ .Values.service.master.port }}
+      targetPort: {{ .Values.service.master.targetPort }}
     - name: slave
-      port: 50000
-      targetPort: 50000
+      port: {{ .Values.service.slave.port }}
+      targetPort: {{ .Values.service.slave.targetPort }}
   selector:
     app: jenkins

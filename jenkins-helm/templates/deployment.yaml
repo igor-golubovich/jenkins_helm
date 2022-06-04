@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: jfrog.it-academy.by/public/jenkins-ci:igolubovich
+          image: {{ .Values.image }}
           imagePullPolicy: IfNotPresent
           env:
             - name: JAVA_OPTS
@@ -37,11 +37,11 @@ spec:
             runAsUser: 0
           resources:
             requests:
-              cpu: 1000m
-              memory: 1000Mi
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
             limits:
-              cpu: 2300m
-              memory: 2300Mi
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.cpu }}
           volumeMounts:
             - name: jenkins-auth-config
               mountPath: /var/jenkins_home/init.groovy.d/basic-security.groovy
@@ -60,8 +60,8 @@ spec:
             name: jenkins-config
         - name: jenkins-config
           nfs:
-            server: 192.168.37.105
-            path: /mnt/IT-Academy/nfs-data/sa2-20-22/Igor_Golubovich/jenkins
+            server: {{ .Values.nfs.server }}
+            path: {{ .Values.nfs.path }}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -113,7 +113,7 @@ data:
                   username: "git_hub_user"
         unclassified:
           location:
-            adminAddress: "igor.golubovich.1991@gmail.com"
-            url: "http://jnk.k8s-17.sa/"
+            adminAddress: "{{ .Values.mail }}"
+            url: "http://{{ .Values.ingress.host }}"
           shell:
             shell: "/bin/bash"
