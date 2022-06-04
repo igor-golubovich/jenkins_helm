@@ -3,7 +3,17 @@ entries:
   jenkins-helm:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.375160041+03:00"
+    created: "2022-06-04T14:25:27.383433699+03:00"
+    description: A Helm chart for Kubernetes
+    digest: 2fc71ca0a8aef87b011eefcc166bcbff523f1e36460a3b5424c7babb4848e9d7
+    name: jenkins-helm
+    type: application
+    urls:
+    - https://igor-golubovich.github.io/jenkins_helm/jenkins-helm-0.20.0.tgz
+    version: 0.20.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-04T14:25:27.382759241+03:00"
     description: A Helm chart for Kubernetes
     digest: 47bd4ca9d0b1c7017acbef2499c9091a613f864701a21c28ea9ecdd969090ad3
     name: jenkins-helm
@@ -13,7 +23,7 @@ entries:
     version: 0.19.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.374742046+03:00"
+    created: "2022-06-04T14:25:27.382310696+03:00"
     description: A Helm chart for Kubernetes
     digest: 134d7d1218401ace4788550aaf6c5eee0d01f8cf2d2a64247cac656dc17c65ff
     name: jenkins-helm
@@ -23,7 +33,7 @@ entries:
     version: 0.18.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.374357842+03:00"
+    created: "2022-06-04T14:25:27.382021333+03:00"
     description: A Helm chart for Kubernetes
     digest: e74d83357630f9baaa392d1fc79ab0f3a0c89b3844280ae5c6e9b13e4a15b8ed
     name: jenkins-helm
@@ -33,7 +43,7 @@ entries:
     version: 0.17.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.369167974+03:00"
+    created: "2022-06-04T14:25:27.381709132+03:00"
     description: A Helm chart for Kubernetes
     digest: 99ae00337cf40dbd1c331c319b088dd6b897ca6f802e3070274ae4b60a9326bb
     name: jenkins-helm
@@ -43,7 +53,7 @@ entries:
     version: 0.16.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.363628045+03:00"
+    created: "2022-06-04T14:25:27.379480757+03:00"
     description: A Helm chart for Kubernetes
     digest: 7ced93c99a14dd031de40483760c86e7b1bbb4ba23c36184d9c613b8f369bedb
     name: jenkins-helm
@@ -53,7 +63,7 @@ entries:
     version: 0.15.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.363424966+03:00"
+    created: "2022-06-04T14:25:27.3787696+03:00"
     description: A Helm chart for Kubernetes
     digest: 02219c24d43f94c98aa5a94b1db1037965cf3857aa36a6a450379c7e8b3fbd28
     name: jenkins-helm
@@ -63,7 +73,7 @@ entries:
     version: 0.14.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.36321655+03:00"
+    created: "2022-06-04T14:25:27.378588943+03:00"
     description: A Helm chart for Kubernetes
     digest: 8ebb4dea445963b08984a38a8b1aba7d37986f4ba369a01785f92ed5c16fff75
     name: jenkins-helm
@@ -73,7 +83,7 @@ entries:
     version: 0.13.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.362886997+03:00"
+    created: "2022-06-04T14:25:27.378285753+03:00"
     description: A Helm chart for Kubernetes
     digest: 04f64b9da4f18ccc833cebdafe4ce0a42cd5980f2f174016c9359e54f3440bf6
     name: jenkins-helm
@@ -83,7 +93,7 @@ entries:
     version: 0.12.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.347145672+03:00"
+    created: "2022-06-04T14:25:27.378001019+03:00"
     description: A Helm chart for Kubernetes
     digest: 500924c4eba8c7a53d74007be96b6608ff5c16b413aed1caa7eefe78cd9e03a2
     name: jenkins-helm
@@ -93,7 +103,7 @@ entries:
     version: 0.11.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.346452489+03:00"
+    created: "2022-06-04T14:25:27.377729216+03:00"
     description: A Helm chart for Kubernetes
     digest: a58dc3838d8fd93598ee948b03dddd994155d6fb563761f1f0a0fd66140cecf9
     name: jenkins-helm
@@ -103,7 +113,7 @@ entries:
     version: 0.10.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.386821315+03:00"
+    created: "2022-06-04T14:25:27.39118867+03:00"
     description: A Helm chart for Kubernetes
     digest: a6758120c0fda0f5d9d54c8b36bfa3c8fe5671afd544c930d195520b4ff0685d
     name: jenkins-helm
@@ -113,7 +123,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.38635529+03:00"
+    created: "2022-06-04T14:25:27.390588969+03:00"
     description: A Helm chart for Kubernetes
     digest: 34a21d003af0b75b36fead8a38fb1e8e14ca48a611053327c1d97200f4f82dd2
     name: jenkins-helm
@@ -123,7 +133,7 @@ entries:
     version: 0.8.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.386050594+03:00"
+    created: "2022-06-04T14:25:27.389786373+03:00"
     description: A Helm chart for Kubernetes
     digest: 4f67a5721dcd9e76ae5d0ec1b4b9cb3f4fec17ca4cd6ce06314328bf52fda061
     name: jenkins-helm
@@ -133,7 +143,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.385575246+03:00"
+    created: "2022-06-04T14:25:27.389210549+03:00"
     description: A Helm chart for Kubernetes
     digest: 986ed40b740381fa7b0c949cc8b0b31a5485dd69f07b4e1ecfb1725482f96e02
     name: jenkins-helm
@@ -143,7 +153,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.385200922+03:00"
+    created: "2022-06-04T14:25:27.387839996+03:00"
     description: A Helm chart for Kubernetes
     digest: a109c67aaca237c32d00c718f0c303d94527f824a94e857921fb6eb21eaf48ce
     name: jenkins-helm
@@ -153,7 +163,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.384653381+03:00"
+    created: "2022-06-04T14:25:27.386582118+03:00"
     description: A Helm chart for Kubernetes
     digest: 19fc202c8fb7e09479696e8fa5b5093e0302877352ca009536023cac148d0336
     name: jenkins-helm
@@ -163,7 +173,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.383089381+03:00"
+    created: "2022-06-04T14:25:27.383785811+03:00"
     description: A Helm chart for Kubernetes
     digest: 3347ae7cdca55b7871f74a9f695d6ded23667924d0993efcdee7076d822cc344
     name: jenkins-helm
@@ -173,7 +183,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.375478802+03:00"
+    created: "2022-06-04T14:25:27.383117336+03:00"
     description: A Helm chart for Kubernetes
     digest: ae54b9582ef408049302a69708a30b93c3c11eaacb84b7665821724bd819bd38
     name: jenkins-helm
@@ -183,7 +193,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-04T14:05:40.345919919+03:00"
+    created: "2022-06-04T14:25:27.377432529+03:00"
     description: A Helm chart for Kubernetes
     digest: 0e6ed5ca20031401745ca752343bef57f7a28d645709c5f75bae86b3169f6a13
     name: jenkins-helm
@@ -191,4 +201,4 @@ entries:
     urls:
     - https://igor-golubovich.github.io/jenkins_helm/jenkins-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-04T14:05:40.344805723+03:00"
+generated: "2022-06-04T14:25:27.37601876+03:00"
