@@ -12,13 +12,13 @@ service:
     port: 50000 
     targetPort: 50000 
 
-resources: 
- requests:
-   cpu: 1200m
-   memory: 1200Mi
- limits:
-   cpu: 1500m
-   memory: 1500Mi
+# resources: 
+#  requests:
+#    cpu: 1000m
+#    memory: 1000Mi
+#  limits:
+#    cpu: 2300m
+#    memory: 2300Mi
 
 nfs:
  server: 192.168.37.105
